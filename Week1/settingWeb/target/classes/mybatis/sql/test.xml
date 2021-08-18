@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.hj.mybatis.sql.test">
+ 
+    <!-- 
+        mybatis-config.xml의 typeAlias에 등록해두지 않았다면 
+        <select id="selectMovie" resultType="com.hj.vo.movieVO" >
+            SELECT MOVIE_NAME, DIRECTOR, TYPE FROM MOVIE
+        </select>
+-->
+    <select id="selectMovie" resultType="movieVO">
+        SELECT MOVIE_NAME, DIRECTOR, TYPE FROM MOVIE
+    </select>
+    
+</mapper>
