@@ -3,6 +3,7 @@
 2. [통계 API(SW활용현황)을 위한 DB, TABLE 생성](https://www.notion.so/3-2-SW-API-DB-Table-5f322ca66bfb471295f6006818f911db)
 3. [[20년도 로그인 수 API] 스프링부트, mybatis, mariadb 연동](https://www.notion.so/3-3-20-API-Mybatis-mariadb-2172c07d53844c909f8a346811a082d1)
 
+  
 
 application.properties  
 - port, contextpath, view, db 등 각종 설정을 한 곳에서 진행합니다.
