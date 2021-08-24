@@ -66,7 +66,7 @@ Spring 웹 요청 처리 흐름
     
     
     [배포서술자 - web.xml]
-
+>
 배포서술자 (DD, Deployment Desciption)
 - WEB-INF/web.xml (약속된 위치)
 - 웹 애플리케이션의 기본적인 환경설정을 위해 작성하는 파일
