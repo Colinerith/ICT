@@ -3,16 +3,16 @@
 2. [통계 API(SW활용현황)을 위한 DB, TABLE 생성](https://www.notion.so/3-2-SW-API-DB-Table-5f322ca66bfb471295f6006818f911db)
 3. [[20년도 로그인 수 API] 스프링부트, mybatis, mariadb 연동](https://www.notion.so/3-3-20-API-Mybatis-mariadb-2172c07d53844c909f8a346811a082d1)
 
-  
+***  
 
 application.properties  
 - port, contextpath, view, db 등 각종 설정을 한 곳에서 진행합니다.
 - 설정내용은 serverport, contextpath를 진행하였고
 - suffix에 jsp를 줌으로써 /WEB-INF/views 아래에 jsp 파일로 자동으로 맵핑해주도록 합니다.  
 
-
+***
   
-spring 프레임워크
+### spring 프레임워크
 - dependency injection : 스프링 프레임워크의 핵심 기능
 - transaction management
 - 라이브러리만 쓰는 방식으로 처리 가능, 모듈 결합이 쉬움
@@ -25,7 +25,7 @@ spring 프레임워크
 - 느슨한 결합력과 인터페이스  
 
 
-MVC2 패턴
+### MVC2 패턴
 - Model: 애플리케이션의 정보(데이터, 비즈니스 로직)
 - View: 사용자 제공 화면
 - Controller: Model - View 상호 작용
@@ -45,14 +45,14 @@ MVC2 패턴
  - MVC 1: JSP가 담당
 
 
-Front Controller 패턴
+### Front Controller 패턴
 - 모든 요청을 처리하는 하나의 대표 컨트롤러를 두는 패턴
 - Controller의 공통 로직을 앞단에서 처리.
 - MVC 패턴과 함께 많이 사용
 - Spring에서 정의한 Front Controller를 DispatcherServlet이라 한다.
 
 
-Spring 웹 요청 처리 흐름
+### Spring 웹 요청 처리 흐름
 1. DispatcherServlet: web.xml에 정의된 URL 패턴에 맞는 요청을 받고 URL과 컨트롤러의 매핑 작업을 HandlerMapping에 요청
 2. HandlerMapping: 요청 정보(URL)를 기준으로 컨트롤러를 결정하며 결과를 HandlerExecution Chain 객체에 담아 리턴. 요청에 해당하는 Interceptor가 있다면 함께 담아서 줌 (= ControllerMapping)
 3. HandlerAdapter: 컨트롤러의 메소드를 호출. 실행될 Interceptor가 있다면 Interceptor의 preHandle() 메소드를 실행한 뒤 다음 컨트롤러의 메소드를 호출해 요청을 처리. DispatcherServlet을 HandlerMapping으로 찾은 Controller와 연결하는 역할 (= ControllerAdapter)
@@ -62,20 +62,19 @@ Spring 웹 요청 처리 흐름
 7. View: DispatcherServlet은 ViewResolver에서 전달받은 View에 Model을 넘겨서 클라이언트에게 보여줄 화면을 생성
 
 
-  
+***  
     
     
-### [배포서술자 - web.xml]
-> 배포서술자 (DD, Deployment Desciption)  
+### 배포서술자 (DD, Deployment Desciption)  
 - WEB-INF/web.xml (약속된 위치)
 - 웹 애플리케이션의 기본적인 환경설정을 위해 작성하는 파일
 - 서버가 구동될 때 web.xml을 읽고 웹 애플리케이션을 설정함
 
-Servlet Mapping
+#### Servlet Mapping
 - MVC 패턴으로 개발된 웹페이지에서 Controller를 담당하는 서블릿에 접근하려면 Mapping 필요
 - web.xml에서 설정하거나, @(Annotation)을 이용한다. (Servet 3.0부터)
 
-web.xml 주요 태그
+#### web.xml 주요 태그
 1. \<filter>, \<filter-mapping>
 - filter를 url-pattern과 매핑하려면 \<filter> 와 \<filter-mapping> 태그 내의 \<filter-name>이 동일해야 함
 - 요청이 들어왔을 때 filter 적용 순서는 web.xml에 정의된 순서. 응답 시에는 반대 순서로 적용
@@ -86,7 +85,9 @@ web.xml 주요 태그
 - \<servlet-name> 이름의 서블릿을 \<url-pattern>과 매핑시키려면 \<servlet>과 \<servlet-mapping>의 \<servlet-name>이 같아야 함
 - \<init-param>은 서블릿의 설정 파일을 지정. 지정하지 않으면 \<servlet-name> 뒤에 '-servlet.xml'이 붙은 파일명이 설정 파일
 
-ContextLoaderListener와 DispatcherServlet
+#### ContextLoaderListener와 DispatcherServlet
  - ContextLoaderListener는 공통 bean 설정을 담당하는 부모,
  - DispatcherServlet은 Controller쪽을 담당하는 자식 관계
  - ContextLoaderListener를 먼저 설정
+
+***
