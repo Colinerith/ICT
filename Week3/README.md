@@ -60,3 +60,34 @@ Spring 웹 요청 처리 흐름
 5. DispatcherServlet: 컨트롤러에서 받은 View 이름과 매칭되는 실제 View 파일을 찾기 위해 ViewResolver에 요청
 6. ViewResolver: 컨트롤러가 처리한 결과를 보여줄 뷰를 결정. 컨트롤러에서 전달받은 View 이름에 prefix, suffix 프로퍼티를 추가한 값이 실제 사용할 뷰 파일의 경로가 됨. ViewResolver는 매핑되는 View 객체를 DispatcherServlet에 전달. View 이름으로 실제 사용할 View객체(JSP)를 찾아주는 역할.
 7. View: DispatcherServlet은 ViewResolver에서 전달받은 View에 Model을 넘겨서 클라이언트에게 보여줄 화면을 생성
+
+
+  
+    
+    
+    [배포서술자 - web.xml]
+
+배포서술자 (DD, Deployment Desciption)
+- WEB-INF/web.xml (약속된 위치)
+- 웹 애플리케이션의 기본적인 환경설정을 위해 작성하는 파일
+- 서버가 구동될 때 web.xml을 읽고 웹 애플리케이션을 설정함
+
+Servlet Mapping
+- MVC 패턴으로 개발된 웹페이지에서 Controller를 담당하는 서블릿에 접근하려면 Mapping 필요
+- web.xml에서 설정하거나, @(Annotation)을 이용한다. (Servet 3.0부터)
+
+web.xml 주요 태그
+1. <filter>, <filter-mapping>
+- filter를 url-pattern과 매핑하려면 <filter> 와 <filter-mapping> 태그 내의 <filter-name>이 동일해야 함
+- 요청이 들어왔을 때 filter 적용 순서는 web.xml에 정의된 순서. 응답 시에는 반대 순서로 적용
+2. ContextLoaderListener
+- ContextLoaderListener를 <listener>로 등록하고 <context-param>을 이용해 공통으로 사용될 Bean 정보를 담고 있는 설정 파일을 지정
+- 설정 파일을 지정하지 않으면 WEB-INF/applicationContext.xml을 설정 파일로 사용
+3. Servlet Mapping 설정 (<servlet>, <servlet-mapping>
+- <servlet-name> 이름의 서블릿을 <url-pattern>과 매핑시키려면 <servlet>의 <servlet-name>과 <servlet-mapping>의 <servlet-name>이 같아야 함
+- <init-param>은 서블릿의 설정 파일을 지정. 지정하지 않으면 <servlet-name> 뒤에 '-servlet.xml'이 붙은 파일명이 설정 파일
+
+ContextLoaderListener와 DispatcherServlet
+ - ContextLoaderListener는 공통 bean 설정을 담당하는 부모,
+ - DispatcherServlet은 Controller쪽을 담당하는 자식 관계
+ - ContextLoaderListener를 먼저 설정
