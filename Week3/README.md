@@ -8,9 +8,10 @@
 application.properties  
 - port, contextpath, view, db 등 각종 설정을 한 곳에서 진행합니다.
 - 설정내용은 serverport, contextpath를 진행하였고
-- suffix에 jsp를 줌으로써 /WEB-INF/views 아래에 jsp 파일로 자동으로 맵핑해주도록 합니다.
+- suffix에 jsp를 줌으로써 /WEB-INF/views 아래에 jsp 파일로 자동으로 맵핑해주도록 합니다.  
 
 
+  
 spring 프레임워크
 - dependency injection : 스프링 프레임워크의 핵심 기능
 - transaction management
@@ -21,7 +22,7 @@ spring 프레임워크
 
 - MVC, 트랜잭션, 인증과 권한  세 가지 공부
 - 각각을 위해 DI, AOP, Servlet Filter를 알아야 함
-- 느슨한 결합력과 인터페이스
+- 느슨한 결합력과 인터페이스  
 
 
 MVC2 패턴
