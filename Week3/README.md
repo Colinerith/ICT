@@ -111,3 +111,24 @@ application.properties
    - spring 웹 기술을 사용하면서 spring 외의 프레임워크나 서비스 엔진에서 spring의 Bean을 사용하지 않는다면 servlet context에 모든 Bean을 다 등록할 수 있다.
 
 ***
+### Filter, Interceptor, AOP
+#### Filter
+- 클라이언트와 DispatcherServlet 사이에 위치해 요청과 응답정보를 변경
+> [request]->[filter]->[dispatcher servlet]->[handler mapping], [handler adapter] ... ->[controller]->..
+<-[response]<-[filter]<-[view]<-[view resolver]<-...
+
+#### Interceptor
+- DispatcherServlet이 Handler(Controller)를 호출하기 전후로 요청을 가로채서 처리
+- HandlerMapping은 DispatcherServlet으로부터 매핑을 요청받으면 그 결과로 HandlerExecutionChain을 돌려준다. 핸들러 실행 체인은 하나 이상의 Interceptor를 거쳐서 Controller가 실행될 수 있도록 구성되어 있다.
+- Interceptor를 등록하지 않으면 바로 컨트롤러가 실행되고, 하나 이상 지정하면 순서에 따라 Interceptor를 거친 후에 Controller가 호출된다.
+
+#### Filter vs Interceptor
+- filter
+   - 클라이언트 요청 시 DispatcherServlet 진입 전 실행
+   - 메소드: init(), doFilter(), destroy()
+- Interceptor
+   - Filter가 실행되고 난 후 DispatcherServlet에서 Controller를 호출하기 전후에 실행
+   - 메소드: preHandle(), postHandle(), afterCompletion(), afterConcurrentHandlingStarted()
+- Request - Filter - DispatcherServlet - Interceptor - Controller
+
+#### AOP
