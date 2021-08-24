@@ -24,7 +24,7 @@ application.properties
 - 각각을 위해 DI, AOP, Servlet Filter를 알아야 함
 - 느슨한 결합력과 인터페이스  
 <br />
-  
+
 ### MVC2 패턴
 - Model: 애플리케이션의 정보(데이터, 비즈니스 로직)
 - View: 사용자 제공 화면
@@ -43,15 +43,15 @@ application.properties
    - 클라이언트가 보낸 데이터가 있다면, 모델을 호출할 때 전달하기 쉽게 적절히 가공
    - 모델이 업무 수행을 완료하면 그 결과를 가지고 화면을 생성하도록 뷰에 전달 (클라이언트 요청에 대해 모델과 뷰를 결정해 전달)
    - MVC 1: JSP가 담당
-  
-  
+<br />
+
 ### Front Controller 패턴
 - 모든 요청을 처리하는 하나의 대표 컨트롤러를 두는 패턴
 - Controller의 공통 로직을 앞단에서 처리.
 - MVC 패턴과 함께 많이 사용
 - Spring에서 정의한 Front Controller를 DispatcherServlet이라 한다.
-  
-  
+<br />
+
 ### Spring 웹 요청 처리 흐름
 1. DispatcherServlet: web.xml에 정의된 URL 패턴에 맞는 요청을 받고 URL과 컨트롤러의 매핑 작업을 HandlerMapping에 요청
 2. HandlerMapping: 요청 정보(URL)를 기준으로 컨트롤러를 결정하며 결과를 HandlerExecution Chain 객체에 담아 리턴. 요청에 해당하는 Interceptor가 있다면 함께 담아서 줌 (= ControllerMapping)
