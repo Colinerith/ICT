@@ -91,3 +91,13 @@ application.properties
  - ContextLoaderListener를 먼저 설정
 
 ***
+
+### 웹 어플리케이션 동작 원리
+1. 웹 어플리케이션이 실행되면 Tomcat(WAS)에 의해 web.xml 로딩
+2. web.xml에 등록된 ContextLoaderListener가 생성됨
+3. ContextLoaderListener가 root-context.xml(설정 파일)을 로딩
+4. Spring Container(ROOT)가 구동됨. Container 내부에는 root-context.xml에 등록된 공통 Bean들 및 개발자가 작성한 비즈니스 로직과 DAO, VO 객체들이 포함됨
+5. 클라이언트의 요청이 웹 어플리케이션에 들어옴
+6. DispatcherServlet이 생성됨
+7. DispatcherServlet이 servlet-context.xml (DispatcherServlet 설정 파일)을 로딩
+8. 두 번째 Spring Container가 구동되며 요청에 맞는 Controller들이 동작함. Controller는 첫 번째로 생성된 Spring Container(ROOT) 내부의 클래스들과 협업해 작업을 처리함.
