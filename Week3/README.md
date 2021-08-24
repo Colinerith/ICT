@@ -23,35 +23,35 @@ application.properties
 - MVC, 트랜잭션, 인증과 권한  세 가지 공부
 - 각각을 위해 DI, AOP, Servlet Filter를 알아야 함
 - 느슨한 결합력과 인터페이스  
-
-
+  
+  
 ### MVC2 패턴
 - Model: 애플리케이션의 정보(데이터, 비즈니스 로직)
 - View: 사용자 제공 화면
 - Controller: Model - View 상호 작용
 - Client -> FrontController -> Controller -> Model (Service) -> Controller -> View
 1. Model Component
- - DB 등과 연동하여 사용자가 입력한 데이터나 사용자에게 출력할 데이터를 다루는 곳
- - 여러 개의 데이터 변경 작업(DML)의 트랜잭션을 다루기도 함
- - DAO 클래스, Service 클래스
+  - DB 등과 연동하여 사용자가 입력한 데이터나 사용자에게 출력할 데이터를 다루는 곳
+  - 여러 개의 데이터 변경 작업(DML)의 트랜잭션을 다루기도 함
+  - DAO 클래스, Service 클래스
 2. View Component
- - 모델이 처리한 데이터나 작업 결과를 가지고 사용자에게 출력할 화면을 만듦
- - 생성된 화면은 웹 브라우저가 출력, HTML/CSS/Java Script를 구성하여 UI를 만듦
- - HTML, JSP를 사용해 작성
+  - 모델이 처리한 데이터나 작업 결과를 가지고 사용자에게 출력할 화면을 만듦
+  - 생성된 화면은 웹 브라우저가 출력, HTML/CSS/Java Script를 구성하여 UI를 만듦
+  - HTML, JSP를 사용해 작성
 3. Controller Component
- - 클라이언트의 요청을 받았을 때 그 요청에 대해 실제 업무를 수행하는 모델 컴포넌트를 호출
- - 클라이언트가 보낸 데이터가 있다면, 모델을 호출할 때 전달하기 쉽게 적절히 가공
- - 모델이 업무 수행을 완료하면 그 결과를 가지고 화면을 생성하도록 뷰에 전달 (클라이언트 요청에 대해 모델과 뷰를 결정해 전달)
- - MVC 1: JSP가 담당
-
-
+  - 클라이언트의 요청을 받았을 때 그 요청에 대해 실제 업무를 수행하는 모델 컴포넌트를 호출
+  - 클라이언트가 보낸 데이터가 있다면, 모델을 호출할 때 전달하기 쉽게 적절히 가공
+  - 모델이 업무 수행을 완료하면 그 결과를 가지고 화면을 생성하도록 뷰에 전달 (클라이언트 요청에 대해 모델과 뷰를 결정해 전달)
+  - MVC 1: JSP가 담당
+  
+  
 ### Front Controller 패턴
 - 모든 요청을 처리하는 하나의 대표 컨트롤러를 두는 패턴
 - Controller의 공통 로직을 앞단에서 처리.
 - MVC 패턴과 함께 많이 사용
 - Spring에서 정의한 Front Controller를 DispatcherServlet이라 한다.
-
-
+  
+  
 ### Spring 웹 요청 처리 흐름
 1. DispatcherServlet: web.xml에 정의된 URL 패턴에 맞는 요청을 받고 URL과 컨트롤러의 매핑 작업을 HandlerMapping에 요청
 2. HandlerMapping: 요청 정보(URL)를 기준으로 컨트롤러를 결정하며 결과를 HandlerExecution Chain 객체에 담아 리턴. 요청에 해당하는 Interceptor가 있다면 함께 담아서 줌 (= ControllerMapping)
@@ -64,7 +64,7 @@ application.properties
 
 ***  
     
-    
+      
 ### 배포서술자 (DD, Deployment Desciption)  
 - WEB-INF/web.xml (약속된 위치)
 - 웹 애플리케이션의 기본적인 환경설정을 위해 작성하는 파일
