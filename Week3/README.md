@@ -77,7 +77,7 @@ Servlet Mapping
 - web.xml에서 설정하거나, @(Annotation)을 이용한다. (Servet 3.0부터)
 
 web.xml 주요 태그
-1. <filter>, <filter-mapping>
+1. \<filter>, <filter-mapping>
 - filter를 url-pattern과 매핑하려면 <filter> 와 <filter-mapping> 태그 내의 <filter-name>이 동일해야 함
 - 요청이 들어왔을 때 filter 적용 순서는 web.xml에 정의된 순서. 응답 시에는 반대 순서로 적용
 2. ContextLoaderListener
