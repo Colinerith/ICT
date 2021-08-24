@@ -23,8 +23,7 @@ application.properties
 - MVC, 트랜잭션, 인증과 권한  세 가지 공부
 - 각각을 위해 DI, AOP, Servlet Filter를 알아야 함
 - 느슨한 결합력과 인터페이스  
-  
-  
+<br />
 ### MVC2 패턴
 - Model: 애플리케이션의 정보(데이터, 비즈니스 로직)
 - View: 사용자 제공 화면
