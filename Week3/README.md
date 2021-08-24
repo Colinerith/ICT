@@ -31,18 +31,18 @@ application.properties
 - Controller: Model - View 상호 작용
 - Client -> FrontController -> Controller -> Model (Service) -> Controller -> View
 1. Model Component
-  - DB 등과 연동하여 사용자가 입력한 데이터나 사용자에게 출력할 데이터를 다루는 곳
-  - 여러 개의 데이터 변경 작업(DML)의 트랜잭션을 다루기도 함
-  - DAO 클래스, Service 클래스
+   - DB 등과 연동하여 사용자가 입력한 데이터나 사용자에게 출력할 데이터를 다루는 곳
+   - 여러 개의 데이터 변경 작업(DML)의 트랜잭션을 다루기도 함
+   - DAO 클래스, Service 클래스
 2. View Component
-    - 모델이 처리한 데이터나 작업 결과를 가지고 사용자에게 출력할 화면을 만듦
+   - 모델이 처리한 데이터나 작업 결과를 가지고 사용자에게 출력할 화면을 만듦
    - 생성된 화면은 웹 브라우저가 출력, HTML/CSS/Java Script를 구성하여 UI를 만듦
    - HTML, JSP를 사용해 작성
 3. Controller Component
-  - 클라이언트의 요청을 받았을 때 그 요청에 대해 실제 업무를 수행하는 모델 컴포넌트를 호출
-  - 클라이언트가 보낸 데이터가 있다면, 모델을 호출할 때 전달하기 쉽게 적절히 가공
-  - 모델이 업무 수행을 완료하면 그 결과를 가지고 화면을 생성하도록 뷰에 전달 (클라이언트 요청에 대해 모델과 뷰를 결정해 전달)
-  - MVC 1: JSP가 담당
+   - 클라이언트의 요청을 받았을 때 그 요청에 대해 실제 업무를 수행하는 모델 컴포넌트를 호출
+   - 클라이언트가 보낸 데이터가 있다면, 모델을 호출할 때 전달하기 쉽게 적절히 가공
+   - 모델이 업무 수행을 완료하면 그 결과를 가지고 화면을 생성하도록 뷰에 전달 (클라이언트 요청에 대해 모델과 뷰를 결정해 전달)
+   - MVC 1: JSP가 담당
   
   
 ### Front Controller 패턴
@@ -76,14 +76,14 @@ application.properties
 
 #### web.xml 주요 태그
 1. \<filter>, \<filter-mapping>
-- filter를 url-pattern과 매핑하려면 \<filter> 와 \<filter-mapping> 태그 내의 \<filter-name>이 동일해야 함
-- 요청이 들어왔을 때 filter 적용 순서는 web.xml에 정의된 순서. 응답 시에는 반대 순서로 적용
+  - filter를 url-pattern과 매핑하려면 \<filter> 와 \<filter-mapping> 태그 내의 \<filter-name>이 동일해야 함
+  - 요청이 들어왔을 때 filter 적용 순서는 web.xml에 정의된 순서. 응답 시에는 반대 순서로 적용
 2. ContextLoaderListener
-- ContextLoaderListener를 \<listener>로 등록하고 \<context-param>을 이용해 공통으로 사용될 Bean 정보를 담고 있는 설정 파일을 지정
-- 설정 파일을 지정하지 않으면 WEB-INF/applicationContext.xml을 설정 파일로 사용
+  - ContextLoaderListener를 \<listener>로 등록하고 \<context-param>을 이용해 공통으로 사용될 Bean 정보를 담고 있는 설정 파일을 지정
+  - 설정 파일을 지정하지 않으면 WEB-INF/applicationContext.xml을 설정 파일로 사용
 3. Servlet Mapping 설정 (\<servlet>, \<servlet-mapping>)
-- \<servlet-name> 이름의 서블릿을 \<url-pattern>과 매핑시키려면 \<servlet>과 \<servlet-mapping>의 \<servlet-name>이 같아야 함
-- \<init-param>은 서블릿의 설정 파일을 지정. 지정하지 않으면 \<servlet-name> 뒤에 '-servlet.xml'이 붙은 파일명이 설정 파일
+  - \<servlet-name> 이름의 서블릿을 \<url-pattern>과 매핑시키려면 \<servlet>과 \<servlet-mapping>의 \<servlet-name>이 같아야 함
+  - \<init-param>은 서블릿의 설정 파일을 지정. 지정하지 않으면 \<servlet-name> 뒤에 '-servlet.xml'이 붙은 파일명이 설정 파일
 
 #### ContextLoaderListener와 DispatcherServlet
  - ContextLoaderListener는 공통 bean 설정을 담당하는 부모,
