@@ -114,7 +114,7 @@ application.properties
 ### Filter, Interceptor, AOP
 #### Filter
 - 클라이언트와 DispatcherServlet 사이에 위치해 요청과 응답정보를 변경
-> [request]->[filter]->[dispatcher servlet]->[handler mapping], [handler adapter] ... ->[controller]->..
+> [request]->[filter]->[dispatcher servlet]->[handler mapping], [handler adapter] ... ->[controller]->..  
 <-[response]<-[filter]<-[view]<-[view resolver]<-...
 
 #### Interceptor
@@ -129,6 +129,6 @@ application.properties
 - Interceptor
    - Filter가 실행되고 난 후 DispatcherServlet에서 Controller를 호출하기 전후에 실행
    - 메소드: preHandle(), postHandle(), afterCompletion(), afterConcurrentHandlingStarted()
-- Request - Filter - DispatcherServlet - Interceptor - Controller
+> Request - Filter - DispatcherServlet - Interceptor - Controller
 
 #### AOP
