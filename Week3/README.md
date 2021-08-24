@@ -36,8 +36,8 @@ application.properties
   - DAO 클래스, Service 클래스
 2. View Component
     - 모델이 처리한 데이터나 작업 결과를 가지고 사용자에게 출력할 화면을 만듦
-  - 생성된 화면은 웹 브라우저가 출력, HTML/CSS/Java Script를 구성하여 UI를 만듦
-  - HTML, JSP를 사용해 작성
+   - 생성된 화면은 웹 브라우저가 출력, HTML/CSS/Java Script를 구성하여 UI를 만듦
+   - HTML, JSP를 사용해 작성
 3. Controller Component
   - 클라이언트의 요청을 받았을 때 그 요청에 대해 실제 업무를 수행하는 모델 컴포넌트를 호출
   - 클라이언트가 보낸 데이터가 있다면, 모델을 호출할 때 전달하기 쉽게 적절히 가공
