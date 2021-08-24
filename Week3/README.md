@@ -4,13 +4,6 @@
 3. [[20년도 로그인 수 API] 스프링부트, mybatis, mariadb 연동](https://www.notion.so/3-3-20-API-Mybatis-mariadb-2172c07d53844c909f8a346811a082d1)
 
 ***  
-
-application.properties  
-- port, contextpath, view, db 등 각종 설정을 한 곳에서 진행합니다.
-- 설정내용은 serverport, contextpath를 진행하였고
-- suffix에 jsp를 줌으로써 /WEB-INF/views 아래에 jsp 파일로 자동으로 맵핑해주도록 합니다.  
-
-***
   
 ### spring 프레임워크
 - dependency injection : 스프링 프레임워크의 핵심 기능
