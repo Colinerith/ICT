@@ -101,3 +101,13 @@ application.properties
 6. DispatcherServlet이 생성됨
 7. DispatcherServlet이 servlet-context.xml (DispatcherServlet 설정 파일)을 로딩
 8. 두 번째 Spring Container가 구동되며 요청에 맞는 Controller들이 동작함. Controller는 첫 번째로 생성된 Spring Container(ROOT) 내부의 클래스들과 협업해 작업을 처리함.
+
+#### 웹 어플리케이션 컨텍스트 구성
+1. Servlet context와 Root context 계층 구조
+   - root context는 모든 servlet 레벨 context의 부모 context. 웹 관련 Bean들은 servlet conext에 두고 나머지는 root에 등록한다.
+2. Root context 단일 구조
+   - spring 웹 기술을 사용하지 않고 프레젠테이션 계층을 만든다면 root context만 등록
+3. Servlet context 단일 구조
+   - spring 웹 기술을 사용하면서 spring 외의 프레임워크나 서비스 엔진에서 spring의 Bean을 사용하지 않는다면 servlet context에 모든 Bean을 다 등록할 수 있다.
+
+***
