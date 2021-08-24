@@ -9,3 +9,53 @@ application.properties
 - port, contextpath, view, db 등 각종 설정을 한 곳에서 진행합니다.
 - 설정내용은 serverport, contextpath를 진행하였고
 - suffix에 jsp를 줌으로써 /WEB-INF/views 아래에 jsp 파일로 자동으로 맵핑해주도록 합니다.
+
+
+spring 프레임워크
+- dependency injection : 스프링 프레임워크의 핵심 기능
+- transaction management
+- 라이브러리만 쓰는 방식으로 처리 가능, 모듈 결합이 쉬움
+
+- spring은 기존 Java EE(Enterprise Edition)의 기능을 커버하면서 더 깔끔하고 간단
+- 그래서 이제는 Java SE(Standard Edition) + EE 대신 SE + Spring
+
+- MVC, 트랜잭션, 인증과 권한  세 가지 공부
+- 각각을 위해 DI, AOP, Servlet Filter를 알아야 함
+- 느슨한 결합력과 인터페이스
+
+
+MVC2 패턴
+- Model: 애플리케이션의 정보(데이터, 비즈니스 로직)
+- View: 사용자 제공 화면
+- Controller: Model - View 상호 작용
+- Client -> FrontController -> Controller -> Model (Service) -> Controller -> View
+1. Model Component
+ - DB 등과 연동하여 사용자가 입력한 데이터나 사용자에게 출력할 데이터를 다루는 곳
+ - 여러 개의 데이터 변경 작업(DML)의 트랜잭션을 다루기도 함
+ - DAO 클래스, Service 클래스
+2. View Component
+ - 모델이 처리한 데이터나 작업 결과를 가지고 사용자에게 출력할 화면을 만듦
+ - 생성된 화면은 웹 브라우저가 출력, HTML/CSS/Java Script를 구성하여 UI를 만듦
+ - HTML, JSP를 사용해 작성
+3. Controller Component
+ - 클라이언트의 요청을 받았을 때 그 요청에 대해 실제 업무를 수행하는 모델 컴포넌트를 호출
+ - 클라이언트가 보낸 데이터가 있다면, 모델을 호출할 때 전달하기 쉽게 적절히 가공
+ - 모델이 업무 수행을 완료하면 그 결과를 가지고 화면을 생성하도록 뷰에 전달 (클라이언트 요청에 대해 모델과 뷰를 결정해 전달)
+ - MVC 1: JSP가 담당
+
+
+Front Controller 패턴
+- 모든 요청을 처리하는 하나의 대표 컨트롤러를 두는 패턴
+- Controller의 공통 로직을 앞단에서 처리.
+- MVC 패턴과 함께 많이 사용
+- Spring에서 정의한 Front Controller를 DispatcherServlet이라 한다.
+
+
+Spring 웹 요청 처리 흐름
+1. DispatcherServlet: web.xml에 정의된 URL 패턴에 맞는 요청을 받고 URL과 컨트롤러의 매핑 작업을 HandlerMapping에 요청
+2. HandlerMapping: 요청 정보(URL)를 기준으로 컨트롤러를 결정하며 결과를 HandlerExecution Chain 객체에 담아 리턴. 요청에 해당하는 Interceptor가 있다면 함께 담아서 줌 (= ControllerMapping)
+3. HandlerAdapter: 컨트롤러의 메소드를 호출. 실행될 Interceptor가 있다면 Interceptor의 preHandle() 메소드를 실행한 뒤 다음 컨트롤러의 메소드를 호출해 요청을 처리. DispatcherServlet을 HandlerMapping으로 찾은 Controller와 연결하는 역할 (= ControllerAdapter)
+4. Controller: 요청을 처리한 뒤 처리한 결과 및 뷰 정보(ModelAndView)를 DispatcherServlet에 전달
+5. DispatcherServlet: 컨트롤러에서 받은 View 이름과 매칭되는 실제 View 파일을 찾기 위해 ViewResolver에 요청
+6. ViewResolver: 컨트롤러가 처리한 결과를 보여줄 뷰를 결정. 컨트롤러에서 전달받은 View 이름에 prefix, suffix 프로퍼티를 추가한 값이 실제 사용할 뷰 파일의 경로가 됨. ViewResolver는 매핑되는 View 객체를 DispatcherServlet에 전달. View 이름으로 실제 사용할 View객체(JSP)를 찾아주는 역할.
+7. View: DispatcherServlet은 ViewResolver에서 전달받은 View에 Model을 넘겨서 클라이언트에게 보여줄 화면을 생성
