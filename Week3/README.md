@@ -5,7 +5,7 @@
 ![image](https://user-images.githubusercontent.com/75845861/130665497-484a2da4-1077-4f28-afb2-bdc3065ac899.png)
 
 - SW활용 현황 통계 API 구축을 위한 SQL 작성
-1) 월별 접속자 수
+1) 월별 접속자 수  
   ![image](https://user-images.githubusercontent.com/75845861/130738839-7fd352b4-5909-486d-8d41-aceeb0c55301.png)
 2) 일자별 접속자 수
 3) 평균 하루 로그인 수
