@@ -21,6 +21,8 @@
   - requestcode(requestCode, code_explain)
   - requestinfo(requestID, requestCode, userID, createDate)
   - user(userID, DEPARTMENT, USERNAME)
+  ![image](https://user-images.githubusercontent.com/75845861/130792663-6738e339-d92b-4c37-a240-84934a05c7ee.png)
+
 - SW활용 현황 통계 API 구축을 위한 SQL 작성
   1. 월별 접속자 수
   2. 일자별 접속자 수
