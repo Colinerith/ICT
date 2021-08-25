@@ -16,11 +16,12 @@
     - <t> <img src="https://user-images.githubusercontent.com/75845861/130008392-94069069-2344-4017-8ff4-d9612b601bae.png" width="500" height="400"/>  
   
 ### 3. Spring boot 개발 환경 설정 및 SQL 작성
-
-SW활용 현황 통계 API 구축을 위한 SQL 작성
-
-월별 접속자 수
-일자별 접속자 수
-평균 하루 로그인 수
-휴일을 제외한 로그인 수 ( 해당 문제에서는 휴일을 포함합니다.) (API 구축시에는 추가 구현 필요 : 쿼리 + @(별도의 db생성 or 공공API 활용))
-부서별 월별 로그인 수
+- Spring boot 2.2.2
+- DB, Table 생성
+  > requestcode(requestCode, code_explain), requestinfo(requestID, requestCode, userID, createDate), user(userID, DEPARTMENT, USERNAME)
+- SW활용 현황 통계 API 구축을 위한 SQL 작성
+1. 월별 접속자 수
+2. 일자별 접속자 수
+3. 평균 하루 로그인 수
+4. 휴일을 제외한 로그인 수
+5. 부서별 월별 로그인 수
