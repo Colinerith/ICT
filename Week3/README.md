@@ -2,11 +2,10 @@
 ![image](https://user-images.githubusercontent.com/75845861/130657499-be83ff35-8151-4ac9-bdc7-0a5bcd57a1c1.png)
 
 - DB, Table 생성  
-![image](https://user-images.githubusercontent.com/75845861/130665497-484a2da4-1077-4f28-afb2-bdc3065ac899.png)
+![image](https://user-images.githubusercontent.com/75845861/130792663-6738e339-d92b-4c37-a240-84934a05c7ee.png)
 
 - SW활용 현황 통계 API 구축을 위한 SQL 작성
-1) 월별 접속자 수  
-  ![image](https://user-images.githubusercontent.com/75845861/130738839-7fd352b4-5909-486d-8d41-aceeb0c55301.png)
+1) 월별 접속자 수
 2) 일자별 접속자 수
 3) 평균 하루 로그인 수
 4) 휴일을 제외한 로그인 수 ( 해당 문제에서는 휴일을 포함합니다.) (API 구축시에는 추가 구현 필요 : 쿼리 + @(별도의 db생성 or 공공API 활용))
