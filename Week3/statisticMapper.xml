@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.hj.settingweb_boot.dao.StatisticMapper">
+     <!-- 특정 연도 지정 -->
+    <select id="selectLoginYear" parameterType="string" resultType="hashMap">
+        select count(*) as yearCnt
+        from statistc.requestinfo
+        where requestCode = 'L' and left(createDate, 2) = #{year};
+    </select>
+    
+    <!-- 특정 월 지정 -->
+    <select id="selectLoginMonth" parameterType="string" resultType="hashMap">
+        select count(*) as monthCnt
+        from statistc.requestinfo
+        where requestCode = 'L' and SUBSTRING(createDate, 3, 2) = #{month};
+    </select>
+    
+    <!-- 특정 일 지정 -->
+    <select id="selectLoginDate" parameterType="string" resultType="hashMap">
+        select count(*) as dateCnt
+        from statistc.requestinfo
+        where requestCode = 'L' and SUBSTRING(createDate, 5, 2) = #{date};
+    </select>
+    
+    <!-- 연도별 총 로그인 -->
+    <select id="totalLoginYear" resultType="hashMap">
+		select left(createDate, 2) as Year, count(*) as Count
+		from statistc.requestinfo
+		where requestCode = 'L'
+		group by left(createDate, 2)
+    </select>
+    
+    <!-- 월별 총 로그인 -->
+    <select id="totalLoginMonth" resultType="hashMap">
+		select SUBSTRING(createDate, 3, 2) as Month, count(*) as Count
+		from statistc.requestinfo
+		where requestCode = 'L'
+		group by SUBSTRING(createDate, 3, 2)
+    </select>
+    
+    <!-- 일자(연월일)별 총 로그인 -->
+    <select id="totalLoginDate" resultType="hashMap">
+		select createDate as Date, count(*) as Count
+		from statistc.requestinfo
+		where requestCode = 'L'
+		group by createDate
+    </select>
+    
+    <!-- 하루 평균 로그인 (접속 수 1 이상 기준) -->
+    <select id="avgLoginDate" resultType="hashMap">
+		select avg(cnt)
+		from (
+			select count(*) cnt
+			from statistc.requestinfo
+			where requestCode = 'L'
+			group by createDate
+		) as dateCnt
+    </select>
+    
+    <!-- 휴일 제외 하루 평균 로그인 -->
+    <select id="avgLoginWeekday" resultType="hashMap">
+		select avg(cnt)
+		from (
+			select count(*) cnt
+			from statistc.requestinfo
+			where requestCode = 'L' and SUBSTRING(createDate, 7, 2) != '06'
+			group by createDate
+		) as dateCnt
+    </select>
+    
+    <!-- 부서별 월별 로그인 -->
+    <select id="avgLoginMonthDepartment" resultType="hashMap">
+		select department, SUBSTRING(createDate, 3, 2) as Month, count(*) as Count
+		from requestinfo, user
+	    where requestinfo.userID = user.userID and requestCode = 'L'
+	    group by SUBSTRING(createDate, 3, 2), department
+    </select>
+    
+</mapper>
