@@ -18,9 +18,9 @@
 ### 3. Spring boot 개발 환경 설정 및 SQL 작성
 - Spring boot 2.2.2
 - DB, Table 생성
-  > requestcode(requestCode, code_explain)
-  > requestinfo(requestID, requestCode, userID, createDate)
-  > user(userID, DEPARTMENT, USERNAME)
+  - requestcode(requestCode, code_explain)
+  - requestinfo(requestID, requestCode, userID, createDate)
+  - user(userID, DEPARTMENT, USERNAME)
 - SW활용 현황 통계 API 구축을 위한 SQL 작성
 1. 월별 접속자 수
 2. 일자별 접속자 수
