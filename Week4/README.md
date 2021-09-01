@@ -12,7 +12,7 @@
 
 ### 2. SQL
 1. 연도별 접속자 수
-``` C
+``` SQL
     <select id="selectLoginYear" parameterType="string" resultType="hashMap">
         select distinct count(*) as yearCnt
         from statistc.requestinfo
