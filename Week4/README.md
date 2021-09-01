@@ -48,18 +48,27 @@
     </select>
 ```
 5. 공휴일을 제외한 평균 하루 로그인 수  
-: holiday Table의 일자와 일치하지 않으며, createDate의 7~8번째 값(요일)이 06이 아닌 값
+: holiday Table의 date와 일치하지 않으며, createDate의 7~8번째 값(요일)이 06(일요일)이 아닌 값
 ``` SQL
     <select id="avgLoginWeekday" resultType="hashMap">
-		select avg(cnt)
+		select avg(cnt) as avgCnt
 		from (
-			select count(*) avgCnt
+			select count(*) cnt
 			from statistc.requestinfo
-			where requestCode = 'L' and SUBSTRING(createDate, 7, 2) != '06'
+			where requestCode = 'L' and SUBSTRING(createDate, 3, 4) NOT IN (select date from holiday) and SUBSTRING(createDate, 7, 2) != '06'
 			group by createDate
 		) as dateCnt
     </select>
+```  
+(참고) 다음 SQL문의 결과는 아래와 같다.  
+``` SQL  
+select *
+from statistc.requestinfo
+where requestCode = 'L' and SUBSTRING(createDate, 3, 4) NOT IN (select date from holiday) and SUBSTRING(createDate, 7, 2) != '06'
+group by createDate
 ```
+![image](https://user-images.githubusercontent.com/75845861/131650739-4c419003-014b-477f-9d74-b38a1b56792c.png)
+
 6. 부서별 월별 로그인 수
 ``` SQL
     <select id="selectLoginMonthDepartment" parameterType="string" resultType="hashMap">
