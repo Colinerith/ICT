@@ -47,7 +47,7 @@
 		) as dateCnt
     </select>
 ```
-5. 공휴일을 제외한 평균 하루 로그인 수  
+5. 휴일을 제외한 평균 하루 로그인 수  
 : holiday Table의 date와 일치하지 않으며, createDate의 7~8번째 값(요일)이 06(일요일)이 아닌 값
 ``` SQL
     <select id="avgLoginWeekday" resultType="hashMap">
@@ -88,6 +88,17 @@ group by createDate
 1. 연도별 접속자 수
 ![image](https://user-images.githubusercontent.com/75845861/131642337-dff09b8d-ab89-4492-910b-81502f3a7694.png)
 
-2. 월별 접속자 수
+2. 월별 접속자 수  
+![image](https://user-images.githubusercontent.com/75845861/131651164-cfaee0fc-abbd-40ec-bd18-806cdec2428d.png)
 
 3. 일별 접속자 수
+![image](https://user-images.githubusercontent.com/75845861/131651310-57192c7b-bf2f-4ae6-8bf2-008bcc9a2f98.png)
+
+4. 평균 하루 로그인 수
+![image](https://user-images.githubusercontent.com/75845861/131651541-14df41a9-9a3a-43d3-b25a-00ec1da037ef.png)
+
+5. 휴일을 제외한 평균 하루 로그인 수  
+![image](https://user-images.githubusercontent.com/75845861/131651579-5520e46a-e8dc-491a-b2ad-57b3e4584bab.png)
+
+6. 부서별 월별 로그인 수
+![image](https://user-images.githubusercontent.com/75845861/131651697-c4525f50-14d7-4c5c-a24b-ee2f2487ac6a.png)
