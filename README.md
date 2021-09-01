@@ -31,5 +31,5 @@
   5. 부서별 월별 로그인 수
 
 ### 4. SW 활용 현황 통계 API 완성 및 API 가이드 수정
-[Week4][https://github.com/hjinha18/ICT/tree/main/Week4]
+[Week4](https://github.com/hjinha18/ICT/tree/main/Week4)
   
