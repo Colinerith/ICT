@@ -1,13 +1,13 @@
 ### 1. DB Table 구성
 
 1. requestInfo Table
-: 별도의 공휴일 테이블을 두어 '휴일을 제외한 로그인 수'를 제공할 수 있도록 함  
-![image](https://user-images.githubusercontent.com/75845861/131637509-ad72164c-0d02-4a42-9248-b7ca256cb2e0.png)
+![image](https://user-images.githubusercontent.com/75845861/131650901-f14cc095-a047-479d-9ff4-5869923c21fe.png)
 
 2. user Table  
 ![image](https://user-images.githubusercontent.com/75845861/131637436-e8f092e0-dd78-4997-b619-0160108bc12d.png)
 
 3. holiday Table  
+: 별도의 공휴일 테이블을 두어 '휴일을 제외한 로그인 수'를 제공할 수 있도록 함  
 ![image](https://user-images.githubusercontent.com/75845861/131614208-b18fbc87-0918-4982-ad73-dc7d41b98dce.png)
 
 ### 2. SQL
