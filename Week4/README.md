@@ -47,7 +47,7 @@
 		) as dateCnt
     </select>
 ```
-5. 공휴일을 제외한 평균 하루 로그인 수
+5. 공휴일을 제외한 평균 하루 로그인 수  
 : holiday Table의 일자와 일치하지 않으며, createDate의 7~8번째 값(요일)이 06이 아닌 값
 ``` SQL
     <select id="avgLoginWeekday" resultType="hashMap">
