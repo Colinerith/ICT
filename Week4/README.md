@@ -19,11 +19,61 @@
         where requestCode = 'L' and left(createDate, 2) = #{year};
     </select>
 ```
-
 2. 월별 접속자 수
-
+``` SQL
+    <select id="selectLoginMonth" parameterType="string" resultType="hashMap">
+        select distinct count(*) as monthCnt
+        from statistc.requestinfo
+        where requestCode = 'L' and SUBSTRING(createDate, 3, 2) = #{month};
+    </select>
+```
 3. 일별 접속자 수
-4. 
+``` SQL
+    <select id="selectLoginDate" parameterType="string" resultType="hashMap">
+        select distinct count(*) as dateCnt
+        from statistc.requestinfo
+        where requestCode = 'L' and SUBSTRING(createDate, 5, 2) = #{date};
+    </select>
+```
+4. 평균 하루 로그인 수
+``` SQL
+    <select id="avgLoginDate" resultType="hashMap">
+		select avg(cnt)
+		from (
+			select count(*) avgCnt
+			from statistc.requestinfo
+			where requestCode = 'L'
+			group by createDate
+		) as dateCnt
+    </select>
+```
+5. 공휴일을 제외한 평균 하루 로그인 수
+: holiday Table의 일자와 일치하지 않으며, createDate의 7~8번째 값(요일)이 06이 아닌 값
+``` SQL
+    <select id="avgLoginWeekday" resultType="hashMap">
+		select avg(cnt)
+		from (
+			select count(*) avgCnt
+			from statistc.requestinfo
+			where requestCode = 'L' and SUBSTRING(createDate, 7, 2) != '06'
+			group by createDate
+		) as dateCnt
+    </select>
+```
+6. 부서별 월별 로그인 수
+``` SQL
+    <select id="selectLoginMonthDepartment" parameterType="string" resultType="hashMap">
+		select Count as monthCnt
+        from
+        (
+        select department, SUBSTRING(createDate, 3, 2) as Month, IFNULL(count(*), 0) as Count
+		from requestinfo, user
+	    where requestinfo.userID = user.userID and requestCode = 'L'
+	    group by SUBSTRING(createDate, 3, 2), department
+        ) as tmp
+        where Month = #{month} and department = #{department}
+    </select>
+```
 
 ### 3. URL & 출력값
 1. 연도별 접속자 수
