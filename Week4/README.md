@@ -71,7 +71,7 @@
 	    where requestinfo.userID = user.userID and requestCode = 'L'
 	    group by SUBSTRING(createDate, 3, 2), department
         ) as tmp
-        where Month = \#{month} and department = #{department}
+        where Month = #{month} and department = #{department}
     </select>
 ```
 
