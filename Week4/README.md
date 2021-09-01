@@ -1,6 +1,6 @@
 ### 1. DB Table 구성
 
-1. requestInfo Table
+1. requestInfo Table  
 ![image](https://user-images.githubusercontent.com/75845861/131650901-f14cc095-a047-479d-9ff4-5869923c21fe.png)
 
 2. user Table  
