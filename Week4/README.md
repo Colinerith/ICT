@@ -1,7 +1,7 @@
 ### 1. DB Table 구성
 
 1. requestInfo Table
-- 별도의 공휴일 테이블을 두어 '휴일을 제외한 로그인 수'를 제공할 수 있도록 함
+: 별도의 공휴일 테이블을 두어 '휴일을 제외한 로그인 수'를 제공할 수 있도록 함  
 ![image](https://user-images.githubusercontent.com/75845861/131637509-ad72164c-0d02-4a42-9248-b7ca256cb2e0.png)
 
 2. user Table
