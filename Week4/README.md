@@ -55,7 +55,8 @@
 		from (
 			select count(*) cnt
 			from statistc.requestinfo
-			where requestCode = 'L' and SUBSTRING(createDate, 3, 4) NOT IN (select date from holiday) and SUBSTRING(createDate, 7, 2) != '06'
+			where requestCode = 'L' and
+				SUBSTRING(createDate, 3, 4) NOT IN (select date from holiday) and SUBSTRING(createDate, 7, 2) != '06'
 			group by createDate
 		) as dateCnt
     </select>
