@@ -14,7 +14,7 @@
   - SW 활용률 API 가이드 초안 작성  
     - 접속자 수, 부서별 접속자 수, 로그인 요청 수, 게시글 작성 수에 따른 request URL, request Parameters, Response Body를 명시
     - <t> <img src="https://user-images.githubusercontent.com/75845861/130008392-94069069-2344-4017-8ff4-d9612b601bae.png" width="600" height="500"/>  
-  - [API 가이드](https://github.com/hjinha18/ICT/blob/main/Week2/SW%20%ED%99%9C%EC%9A%A9%EB%A5%A0%20API%20%EA%B0%80%EC%9D%B4%EB%93%9C_1.1.pdf)
+  - [API 가이드 문서](https://github.com/hjinha18/ICT/blob/main/Week2/SW%20%ED%99%9C%EC%9A%A9%EB%A5%A0%20API%20%EA%B0%80%EC%9D%B4%EB%93%9C_1.1.pdf)
   
 ### 3. Spring boot 개발 환경 설정 및 SQL 작성
 - Spring boot 2.2.2
@@ -30,7 +30,7 @@
   3. 평균 하루 로그인 수
   4. 휴일을 제외한 로그인 수
   5. 부서별 월별 로그인 수
-   - [Week3](https://github.com/hjinha18/ICT/tree/main/Week3)
+- [Week3](https://github.com/hjinha18/ICT/tree/main/Week3)
 
 ### 4. SW 활용 현황 통계 API 완성 및 API 가이드 수정
    - [Week4](https://github.com/hjinha18/ICT/tree/main/Week4)
