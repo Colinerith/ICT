@@ -7,13 +7,13 @@
   - MySql WorkBench 8.0.26
   - 샘플 DB 구축
   - spring, Mariadb, MyBatis 연동을 통한 데이터 조회  
-  -  <t> <img src="https://user-images.githubusercontent.com/75845861/129186039-3c41220a-6bb2-4bd9-abdd-efc0fbabc778.png" width="200" height="180"/>
+  -  <t> <img src="https://user-images.githubusercontent.com/75845861/129186039-3c41220a-6bb2-4bd9-abdd-efc0fbabc778.png" width="200" height="160"/>
   - [Week1](https://github.com/hjinha18/ICT/tree/main/Week1)
     
 ### 2. API 가이드 작성  
   - SW 활용률 API 가이드 초안 작성  
     - 접속자 수, 부서별 접속자 수, 로그인 요청 수, 게시글 작성 수에 따른 request URL, request Parameters, Response Body를 명시
-    - <t> <img src="https://user-images.githubusercontent.com/75845861/130008392-94069069-2344-4017-8ff4-d9612b601bae.png" width="600" height="460"/>  
+    - <t> <img src="https://user-images.githubusercontent.com/75845861/130008392-94069069-2344-4017-8ff4-d9612b601bae.png" width="600" height="500"/>  
   - [API 가이드 문서](https://github.com/hjinha18/ICT/blob/main/Week2/SW%20%ED%99%9C%EC%9A%A9%EB%A5%A0%20API%20%EA%B0%80%EC%9D%B4%EB%93%9C_1.1.pdf)
   
 ### 3. Spring boot 개발 환경 설정 및 SQL 작성
