@@ -133,6 +133,7 @@
 #### AOP(Aspect Oriented Programming)
 - 관점 지향 프로그래밍. 기능을 핵심 비즈니스 로직과 공통 모듈로 구분하여 핵심 로직에 영향을 미치지 않고 비즈니스 로직 사이사이에 공통 모듈을 끼워 넣는 개발 방법.
 - Advice: 여러 Controller에서 뽑아낸 공통 코드 ex) 권한 체크  
-          행동(what)과 시점(when)을 정의한 것. @Before, @After, @AfterReturning, @AfterThrowing, @Around
+          행동(what)과 시점(when)을 정의한 것. 
+          @Before, @After, @AfterReturning, @AfterThrowing, @Around
 - Joinpoint: Advice가 적용될 수 있는 위치(where). spring에서는 메소드 joinpoint만 제공한다.
 - Pointcut: 특정 조건에 의해 필터링된 Joinpoint. Joinpoint 중 특정 메소드에서만 공통기능을 수행하기 위해 사용.
